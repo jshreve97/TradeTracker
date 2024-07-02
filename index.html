@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Tracker</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Trade Tracker</h1>
+    <div id="stats">
+        <h2>Statistics</h2>
+        <p>Total Wins: <span id="total-wins">0</span></p>
+        <p>Total Losses: <span id="total-losses">0</span></p>
+        <p>Win/Loss Percentage: <span id="win-loss-percentage">0%</span></p>
+        <p>Total Money Gained/Lost: <span id="total-money">0</span></p>
+        <p>Risk-Reward Ratio: <span id="risk-reward-ratio">0</span></p>
+        <div id="pair-stats">
+            <h3>Pair Stats</h3>
+        </div>
+    </div>
+    <form id="trade-form">
+        <label for="pair">Trading Pair:</label>
+        <input type="text" id="pair" required>
+        
+        <label for="result">Result:</label>
+        <select id="result">
+            <option value="win">Win</option>
+            <option value="loss">Loss</option>
+        </select>
+        
+        <label for="risked">Amount Risked:</label>
+        <input type="number" id="risked" required>
+        
+        <label for="won">Amount Won/Lost:</label>
+        <input type="number" id="won" required>
+        
+        <button type="submit">Add Trade</button>
+        <button type="button" id="clear-stats">Clear Stats and History</button>
+    </form>
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then((registration) => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch((error) => {
+                    console.log('Service Worker registration failed:', error);
+                });
+        }
+    </script>
+</body>
+</html>
