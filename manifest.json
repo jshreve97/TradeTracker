@@ -1,7 +1,7 @@
 {
     "name": "Trade Tracker",
     "short_name": "TradeTracker",
-    "start_url": ".",
+    "start_url": "./",
     "display": "standalone",
     "background_color": "#ffffff",
     "description": "A simple PWA to track trading performance.",
