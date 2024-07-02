@@ -2,11 +2,12 @@ self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open('trade-tracker-cache').then((cache) => {
             return cache.addAll([
-                '/',
-                '/index.html',
-                '/app.js',
-                '/manifest.json',
-                '/icon.png'
+                './',
+                './index.html',
+                './app.js',
+                './manifest.json',
+                './styles.css',
+                './icon.png'
             ]);
         })
     );
